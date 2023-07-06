@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block title %}友情链接{% endblock %}
+{% block main %}
+    <table class="table">
+    <tbody>
+
+        {% for link in link_list %}
+            <ul class="list-group">
+{#                <li scope="row" class="list-group-item">{{ forloop.counter }}</li>#}
+                <li class="list-group-item">标题：<h4><span class="badge">{{ forloop.counter }}</span>{{ link.title }}</h4></li>
+                <li class="list-group-item">网址：<a href="{{ link.href }}">{{ link.href }}</a></li>
+            </ul>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+
+</body>
+</html>

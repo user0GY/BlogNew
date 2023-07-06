@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block title %}
+    评论
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br>
+      <!-- 提交文章的表单 -->
+      <form method="post" action=".">
+        <!-- Django中需要POST数据的地方都必须有csrf_token -->
+        {% csrf_token %}
+        <!-- 文章标题 -->
+        <div class="form-group">
+          <!-- 标签 -->
+          <label for="title">昵称</label>
+          <!-- 文本框 -->
+          <input type="text" class="form-control" id="nickname" name="nickname">
+            <label for="title">email</label>
+          <!-- 文本框 -->
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+        <!-- 文章正文 -->
+        <div class="form-group">
+          <label for="body">文章正文</label>
+          <!-- 文本区域 -->
+          <textarea type="text" class="form-control" id="body" name="body" rows="12"></textarea>
+        </div>
+        <!-- 提交按钮 -->
+        <br>
+        <button type="submit" class="btn btn-primary">完成</button>
+      </form>
+    </div>
+  </div>
+</div>
+{%  endblock %}
+</body>
+</html>

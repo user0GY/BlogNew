@@ -1,0 +1,11 @@
+asgiref==3.6.0
+beautifulsoup4==4.12.2
+Django==3.1.14
+django-bootstrap3==21.2
+django-bootstrap4==21.2
+django-uwsgi==0.2.2
+mysqlclient==1.4.6
+PyMySQL==1.0.3
+pytz==2023.3
+soupsieve==2.4.1
+sqlparse==0.4.4

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block title %}
+    <h1>{{ post.title }}</h1>
+{% endblock %}
+
+{% block main %}
+    {% if post %}
+        <h1>{{ post.title }}</h1>
+        <div>
+            <span>category:{{ post.category.name }}</span>
+            <span>author:{{ post.author.username }}</span>
+        </div>
+        <hr/>
+        <p>
+            {{ post.body }}
+        </p>
+        <a href="{% url 'comment' post.id %}">评论</a>
+        <h4>共有{{ comment.count }}条评论</h4>
+        {% for c in comment  %}
+            <span>{{ c.nick_name }}({{ c.email }})说：</span>
+            <span>
+            <p>
+                {{ c.body }}
+            </p>
+            </span>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+</body>
+</html>
